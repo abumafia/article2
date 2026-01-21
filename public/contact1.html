@@ -3,57 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | The Global Science</title>
-    <meta name="description" content="Contact The Global Science for research inquiries, article submissions, or support. We respond within 24-48 hours.">
+    <title>Contact | Scientific Horizon</title>
+    <meta name="description" content="Contact Scientific Horizon for research inquiries, article submissions, or support. We respond within 24-48 hours.">
     <link href="https://cdn.tailwindcss.com" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-<style id="tgsTheme">
-  /* Theme system: light/dark via html[data-theme] */
-  html[data-theme="light"] body { background-color: #f8fafc !important; color: #0f172a !important; }
-  html[data-theme="dark"] body  { background-color: #020617 !important; color: #f1f5f9 !important; }
-
-  /* Light overrides for Tailwind slate-based dark UI */
-  html[data-theme="light"] .bg-slate-950 { background-color: #f8fafc !important; }
-  html[data-theme="light"] .bg-slate-900\/60 { background-color: rgba(255,255,255,.75) !important; }
-  html[data-theme="light"] .bg-slate-950\/60 { background-color: rgba(255,255,255,.75) !important; }
-  html[data-theme="light"] .bg-slate-950\/50 { background-color: rgba(255,255,255,.65) !important; }
-  html[data-theme="light"] .bg-slate-900 { background-color: #ffffff !important; }
-  html[data-theme="light"] .text-slate-100 { color: #0f172a !important; }
-  html[data-theme="light"] .text-slate-200 { color: #0f172a !important; }
-  html[data-theme="light"] .text-slate-300 { color: #334155 !important; }
-  html[data-theme="light"] .text-slate-400 { color: #475569 !important; }
-  html[data-theme="light"] .border-slate-800\/70,
-  html[data-theme="light"] .border-slate-800 { border-color: rgba(15,23,42,.15) !important; }
-  html[data-theme="light"] .ring-soft { box-shadow: 0 0 0 1px rgba(15,23,42,.12) inset !important; }
-
-  /* Dark overrides for Tailwind gray-based light UI */
-  html[data-theme="dark"] .bg-gray-50 { background-color: #020617 !important; }
-  html[data-theme="dark"] .bg-white { background-color: rgba(15,23,42,.75) !important; color: #f1f5f9 !important; }
-  html[data-theme="dark"] .text-gray-600 { color: rgba(203,213,225,.85) !important; }
-  html[data-theme="dark"] .text-gray-700 { color: rgba(226,232,240,.92) !important; }
-  html[data-theme="dark"] .text-gray-500 { color: rgba(148,163,184,.95) !important; }
-  html[data-theme="dark"] .border,
-  html[data-theme="dark"] .border-b,
-  html[data-theme="dark"] .border-t { border-color: rgba(148,163,184,.22) !important; }
-  html[data-theme="dark"] .hover\:bg-gray-100:hover { background-color: rgba(15,23,42,.55) !important; }
-</style>
-
-<script>
-  (function () {
-    const KEY = 'tgs_theme';
-    const saved = localStorage.getItem(KEY);
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = saved || (prefersDark ? 'dark' : 'light');
-    document.documentElement.dataset.theme = theme;
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-  })();
-</script>
 </head>
 <body class="bg-gray-50">
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand font-weight-bold text-primary" href="index.html">
-                <i class="fas fa-atom mr-2"></i>The Global Science
+                <i class="fas fa-atom mr-2"></i>Scientific Horizon
             </a>
         </div>
     </nav>
@@ -117,7 +76,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <h6 class="font-weight-bold"><i class="fas fa-envelope mr-2"></i>Email</h6>
-                                <p class="text-muted">support@hallaym.site</p>
+                                <p class="text-muted">support.hallaym.site</p>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <h6 class="font-weight-bold"><i class="fas fa-clock mr-2"></i>Response Time</h6>
@@ -194,28 +153,5 @@
             `);
         }
     </script>
-<script>
-  (function () {
-    const KEY = 'tgs_theme';
-    const btn = document.getElementById('themeToggle');
-    const icon = document.getElementById('themeIcon');
-    function apply(theme){
-      document.documentElement.dataset.theme = theme;
-      document.documentElement.classList.toggle('dark', theme === 'dark');
-      localStorage.setItem(KEY, theme);
-      if (icon) icon.textContent = theme === 'dark' ? '☾' : '☀';
-      if (btn) btn.setAttribute('title', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-      if (btn) btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-    }
-    if (!btn) return;
-    // init icon
-    const current = document.documentElement.dataset.theme || 'light';
-    apply(current);
-    btn.addEventListener('click', function(){
-      const t = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-      apply(t);
-    });
-  })();
-</script>
 </body>
 </html>

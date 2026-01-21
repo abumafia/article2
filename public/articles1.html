@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Articles | The Global Science</title>
-  <meta name="description" content="The Global Science maqolalari — qidiruv, archive va issue bo‘yicha ko‘rish." />
+  <title>Articles | HALLAYM SCI-Journal</title>
+  <meta name="description" content="HALLAYM SCI-Journal maqolalari — qidiruv, archive va issue bo‘yicha ko‘rish." />
 
   <link rel="icon" href="data:," />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -34,8 +34,8 @@
       <a href="/" class="flex items-center gap-2">
         <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-fuchsia-500 shadow-soft"></span>
         <div class="leading-tight">
-          <div class="font-bold tracking-tight" id="journalTitle">The Global Science</div>
-          <div class="text-xs text-slate-300 -mt-0.5" id="journalScope">Multidisciplinary Open Access Journal</div>
+          <div class="font-bold tracking-tight" id="journalTitle">HALLAYM SCI-Journal</div>
+          <div class="text-xs text-slate-300 -mt-0.5" id="journalScope">Multidisciplinary Open Access</div>
         </div>
       </a>
 
@@ -66,7 +66,7 @@
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
       <div>
         <h1 class="text-2xl md:text-4xl font-extrabold tracking-tight">Articles</h1>
-        <p class="mt-2 text-slate-300">An optimized list for searching, browsing by issue, and quick reading.</p>
+        <p class="mt-2 text-slate-300">Qidiruv, issue bo‘yicha ko‘rish va tez o‘qish uchun optimallashtirilgan ro‘yxat.</p>
       </div>
       <a href="/archives.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 ring-soft hover:bg-slate-900">
         <i class="fa-solid fa-box-archive"></i>
@@ -79,11 +79,11 @@
       <div class="grid md:grid-cols-12 gap-3">
         <div class="md:col-span-6 relative">
           <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
-          <input id="q" class="w-full pl-11 pr-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="Search: title, author, abstract, keyword..." />
+          <input id="q" class="w-full pl-11 pr-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="Qidiruv: title, author, abstract, keyword..." />
         </div>
         <div class="md:col-span-3">
-          <input id="issueId" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="Issue ID (optional)" />
-          <div class="mt-1 text-xs text-slate-400">You can find the Issue ID from the issue page URL query.</div>
+          <input id="issueId" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="Issue ID (ixtiyoriy)" />
+          <div class="mt-1 text-xs text-slate-400">Issue ID’ni issue sahifasidagi URL query’dan olasiz.</div>
         </div>
         <div class="md:col-span-3 flex gap-2">
           <button id="btnSearch" class="flex-1 px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 font-semibold">Search</button>
@@ -108,7 +108,7 @@
 
   <footer class="border-t border-slate-800/70 bg-slate-950/60 glass">
     <div class="max-w-6xl mx-auto px-4 py-8 text-xs text-slate-400">
-      © <span id="year"></span> <span id="footerTitle">The Global Science</span>. Publisher: <span id="footerPublisher">Hallaym</span>. ISSN (Online): <span id="footerIssn">Pending</span>.
+      © <span id="year"></span> <span id="footerTitle">HALLAYM SCI-Journal</span>. Publisher: <span id="footerPublisher">Hallaym</span>. ISSN (Online): <span id="footerIssn">Pending</span>.
     </div>
   </footer>
 
@@ -203,7 +203,7 @@
         const list = await fetch(u.toString()).then(r => r.json()).catch(() => []);
         const arr = Array.isArray(list) ? list : [];
         $('status').textContent = `${arr.length} result(s)`;
-        $('grid').innerHTML = arr.map(card).join('') || `<div class="p-4 rounded-2xl bg-slate-900/60 ring-soft text-slate-300">No results found.</div>`;
+        $('grid').innerHTML = arr.map(card).join('') || `<div class="p-4 rounded-2xl bg-slate-900/60 ring-soft text-slate-300">No results.</div>`;
         $('page').textContent = '1';
         $('pages').textContent = '1';
         $('prev').disabled = true;
@@ -217,7 +217,7 @@
       const data = await fetch(`/api/articles/page/${currentPage}`).then(r => r.json());
       const articles = Array.isArray(data.articles) ? data.articles : [];
 
-      $('grid').innerHTML = articles.map(card).join('') || `<div class="p-4 rounded-2xl bg-slate-900/60 ring-soft text-slate-300">No articles available yet.</div>`;
+      $('grid').innerHTML = articles.map(card).join('') || `<div class="p-4 rounded-2xl bg-slate-900/60 ring-soft text-slate-300">No articles yet.</div>`;
       $('status').textContent = `${data.totalArticles ?? articles.length} article(s)`;
       $('page').textContent = String(data.currentPage || currentPage);
       $('pages').textContent = String(data.totalPages || 1);

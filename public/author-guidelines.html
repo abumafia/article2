@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="uz">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Author Guidelines | HALLAYM SCI-Journal</title>
-  <meta name="description" content="HALLAYM SCI-Journal mualliflar uchun qo‘llanma: format, strukturasi, submission va rasmiy talablar." />
+  <title>Author Guidelines | The Global Science</title>
+  <meta name="description" content="Author guidelines for The Global Science: formatting, structure, submission steps, and requirements." />
 
   <link rel="icon" href="data:," />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -21,6 +21,47 @@
     .proseish li { margin-top: .35rem; }
     .chip { box-shadow: 0 0 0 1px rgba(148,163,184,.18) inset; }
   </style>
+<style id="tgsTheme">
+  /* Theme system: light/dark via html[data-theme] */
+  html[data-theme="light"] body { background-color: #f8fafc !important; color: #0f172a !important; }
+  html[data-theme="dark"] body  { background-color: #020617 !important; color: #f1f5f9 !important; }
+
+  /* Light overrides for Tailwind slate-based dark UI */
+  html[data-theme="light"] .bg-slate-950 { background-color: #f8fafc !important; }
+  html[data-theme="light"] .bg-slate-900\/60 { background-color: rgba(255,255,255,.75) !important; }
+  html[data-theme="light"] .bg-slate-950\/60 { background-color: rgba(255,255,255,.75) !important; }
+  html[data-theme="light"] .bg-slate-950\/50 { background-color: rgba(255,255,255,.65) !important; }
+  html[data-theme="light"] .bg-slate-900 { background-color: #ffffff !important; }
+  html[data-theme="light"] .text-slate-100 { color: #0f172a !important; }
+  html[data-theme="light"] .text-slate-200 { color: #0f172a !important; }
+  html[data-theme="light"] .text-slate-300 { color: #334155 !important; }
+  html[data-theme="light"] .text-slate-400 { color: #475569 !important; }
+  html[data-theme="light"] .border-slate-800\/70,
+  html[data-theme="light"] .border-slate-800 { border-color: rgba(15,23,42,.15) !important; }
+  html[data-theme="light"] .ring-soft { box-shadow: 0 0 0 1px rgba(15,23,42,.12) inset !important; }
+
+  /* Dark overrides for Tailwind gray-based light UI */
+  html[data-theme="dark"] .bg-gray-50 { background-color: #020617 !important; }
+  html[data-theme="dark"] .bg-white { background-color: rgba(15,23,42,.75) !important; color: #f1f5f9 !important; }
+  html[data-theme="dark"] .text-gray-600 { color: rgba(203,213,225,.85) !important; }
+  html[data-theme="dark"] .text-gray-700 { color: rgba(226,232,240,.92) !important; }
+  html[data-theme="dark"] .text-gray-500 { color: rgba(148,163,184,.95) !important; }
+  html[data-theme="dark"] .border,
+  html[data-theme="dark"] .border-b,
+  html[data-theme="dark"] .border-t { border-color: rgba(148,163,184,.22) !important; }
+  html[data-theme="dark"] .hover\:bg-gray-100:hover { background-color: rgba(15,23,42,.55) !important; }
+</style>
+
+<script>
+  (function () {
+    const KEY = 'tgs_theme';
+    const saved = localStorage.getItem(KEY);
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  })();
+</script>
 </head>
 
 <body class="min-h-screen bg-slate-950 text-slate-100">
@@ -34,7 +75,7 @@
       <a href="/" class="flex items-center gap-2">
         <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-fuchsia-500 shadow-soft"></span>
         <div class="leading-tight">
-          <div class="font-bold tracking-tight" id="journalTitle">HALLAYM SCI-Journal</div>
+          <div class="font-bold tracking-tight" id="journalTitle">The Global Science</div>
           <div class="text-xs text-slate-300 -mt-0.5" id="journalScope">Multidisciplinary Open Access</div>
         </div>
       </a>
@@ -46,6 +87,7 @@
         <a href="/submit.html" class="px-3 py-2 rounded-xl bg-slate-900/60 ring-soft">Submit</a>
       </nav>
 
+      <button id="themeToggle" class="w-10 h-10 grid place-items-center rounded-xl bg-slate-900/60 ring-soft hover:bg-slate-900" aria-label="Toggle theme" title="Toggle theme"><span id="themeIcon" class="text-sm">☾</span></button>
       <button id="btnMenu" class="md:hidden w-10 h-10 grid place-items-center rounded-xl bg-slate-900/60 ring-soft hover:bg-slate-900" aria-label="Menu">
         <i class="fa-solid fa-bars"></i>
       </button>
@@ -65,11 +107,11 @@
     <div class="p-6 md:p-8 rounded-3xl bg-slate-900/60 border border-slate-800/70 ring-soft shadow-soft">
       <div class="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <div class="text-xs text-slate-300">Mualliflar uchun</div>
+          <div class="text-xs text-slate-300">For authors</div>
           <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">Author Guidelines</h1>
           <p class="mt-2 text-slate-300 leading-relaxed max-w-3xl">
-            Ushbu qo‘llanma HALLAYM SCI-Journal’ga maqola topshirish (submission) jarayonini soddalashtiradi.
-            ISSN hozircha <span class="font-semibold">Pending</span>. Jurnal: <span class="font-semibold">Open Access</span>.
+            These guidelines simplify the manuscript submission process for The Global Science.
+            ISSN is currently <span class="font-semibold">Pending</span>. The journal is <span class="font-semibold">Open Access</span>.
           </p>
         </div>
         <div class="flex flex-wrap gap-2">
@@ -80,46 +122,46 @@
 
       <div class="mt-6 grid lg:grid-cols-12 gap-4">
         <section class="lg:col-span-7 p-5 rounded-2xl bg-slate-950/50 ring-soft proseish">
-          <h2>1. Maqola strukturasi (tavsiya)</h2>
+          <h2>1. Recommended article structure</h2>
           <ul>
-            <li><strong>Title</strong> — aniq va qisqa.</li>
-            <li><strong>Authors</strong> — F.I.O, affiliation, ORCID (ixtiyoriy).</li>
-            <li><strong>Abstract</strong> — 150–250 so‘z.</li>
-            <li><strong>Keywords</strong> — 5–7 ta.</li>
-            <li><strong>Introduction</strong> — muammo va maqsad.</li>
-            <li><strong>Methods / Materials</strong> — metodika (mavzuga qarab).</li>
-            <li><strong>Results</strong> — natijalar.</li>
-            <li><strong>Discussion</strong> — tahlil va solishtirish.</li>
-            <li><strong>Conclusion</strong> — xulosa va takliflar.</li>
-            <li><strong>References</strong> — bibliografiya.</li>
+            <li><strong>Title</strong> — clear and concise.</li>
+            <li><strong>Authors</strong> — full name, affiliation, ORCID (optional).</li>
+            <li><strong>Abstract</strong> — 150–250 words.</li>
+            <li><strong>Keywords</strong> — 5–7 items.</li>
+            <li><strong>Introduction</strong> — problem statement and objectives.</li>
+            <li><strong>Methods / Materials</strong> — methodology (as appropriate).</li>
+            <li><strong>Results</strong> — findings.</li>
+            <li><strong>Discussion</strong> — analysis and comparison.</li>
+            <li><strong>Conclusion</strong> — conclusions and recommendations.</li>
+            <li><strong>References</strong> — bibliography.</li>
           </ul>
 
-          <h2>2. Format talablari</h2>
+          <h2>2. Formatting requirements</h2>
           <ul>
-            <li>Fayl: <strong>PDF</strong> (majburiy). Qo‘shimcha fayl (jadval/dataset) ixtiyoriy.</li>
-            <li>Til: Uzbek / English (yoki aralash — mavzuga qarab). Abstract’ni English’da berish tavsiya.</li>
-            <li>Plagiat: muallif 100% javobgar. Iqtiboslar aniq ko‘rsatilishi shart.</li>
-            <li>Grafiklar: o‘qiladigan, sarlavha va raqamlar bilan.</li>
+            <li>File: <strong>PDF</strong> (required). Supplementary files (tables/datasets) are optional.</li>
+            <li>Language: Uzbek / English (or mixed, depending on the topic). Providing the abstract in English is recommended.</li>
+            <li>Plagiarism: authors are fully responsible. All citations must be clearly indicated.</li>
+            <li>Figures: must be readable, with captions and numbered labels.</li>
           </ul>
 
-          <h2>3. References (tavsiya format)</h2>
+          <h2>3. References (recommended format)</h2>
           <p>
-            APA 7 yoki IEEE tavsiya etiladi. Muhimi — bir xil formatda bo‘lishi.
-            Agar DOI mavjud bo‘lsa, ko‘rsatish tavsiya.
+            APA 7 or IEEE is recommended. The key requirement is consistency.
+            If a DOI is available, it is recommended to include it.
           </p>
 
-          <h2>4. Submission jarayoni</h2>
+          <h2>4. Submission workflow</h2>
           <ul>
             <li><strong>Register</strong> → <strong>Login</strong> → <strong>Submit</strong>.</li>
-            <li>Maqola holati: submitted → screening → (review/revision) → accepted → published.</li>
-            <li>Tahririyat muallif bilan platforma orqali bog‘lanadi.</li>
+            <li>Manuscript status: submitted → screening → (review/revision) → accepted → published.</li>
+            <li>The editorial office will contact the author through the platform.</li>
           </ul>
 
-          <h2>5. Muallifning majburiyatlari</h2>
+          <h2>5. Author responsibilitiesning majburiyatlari</h2>
           <ul>
             <li>Original ish (yoki aniq cite bilan).</li>
-            <li>Conflict of interest bo‘lsa ko‘rsatish.</li>
-            <li>Mualliflar ro‘yxati va hissasi adolatli.</li>
+            <li>Conflict of interest bo'lsa ko'rsatish.</li>
+            <li>Authorlar ro'yxati va hissasi adolatli.</li>
           </ul>
         </section>
 
@@ -136,9 +178,9 @@
 
           <div class="p-5 rounded-2xl bg-slate-950/50 ring-soft">
             <div class="text-sm text-slate-300">Tavsiya</div>
-            <div class="mt-1 font-bold">Metadata’ni to‘liq kiriting</div>
+            <div class="mt-1 font-bold">Metadata'ni to'liq kiriting</div>
             <p class="mt-2 text-sm text-slate-300 leading-relaxed">
-              Title, Authors, Abstract, Keywords va References to‘liq bo‘lsa, maqola sahifasi ilmiy ko‘rinishda chiqadi,
+              Title, Authors, Abstract, Keywords va References to'liq bo'lsa, manuscript sahifasi ilmiy ko'rinishda chiqadi,
               iqtibos (How to cite) avtomatik generatsiya qilinadi.
             </p>
           </div>
@@ -149,7 +191,7 @@
 
   <footer class="border-t border-slate-800/70 bg-slate-950/60 glass">
     <div class="max-w-6xl mx-auto px-4 py-8 text-xs text-slate-400">
-      © <span id="year"></span> <span id="footerTitle">HALLAYM SCI-Journal</span>. Publisher: Hallaym. ISSN (Online): <span id="footerIssn">Pending</span>.
+      © <span id="year"></span> <span id="footerTitle">The Global Science</span>. Publisher: Hallaym. ISSN (Online): <span id="footerIssn">Pending</span>.
     </div>
   </footer>
 
@@ -170,5 +212,28 @@
       } catch {}
     })();
   </script>
+<script>
+  (function () {
+    const KEY = 'tgs_theme';
+    const btn = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+    function apply(theme){
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+      localStorage.setItem(KEY, theme);
+      if (icon) icon.textContent = theme === 'dark' ? '☾' : '☀';
+      if (btn) btn.setAttribute('title', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      if (btn) btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+    if (!btn) return;
+    // init icon
+    const current = document.documentElement.dataset.theme || 'light';
+    apply(current);
+    btn.addEventListener('click', function(){
+      const t = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      apply(t);
+    });
+  })();
+</script>
 </body>
 </html>
